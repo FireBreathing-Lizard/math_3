@@ -59,7 +59,7 @@ public class Main {
 
     public static void printDisc() {
         D = (b * b - 4 * a * c);
-        System.out.printf("D = %.1f * %.1f - 4 * %.1f * %.1f = %.1f%n", b, b, a, c, D);
+        //System.out.printf("D = %.1f * %.1f - 4 * %.1f * %.1f = %.1f%n", b, b, a, c, D);
     }
 
     public static void prx1() {
