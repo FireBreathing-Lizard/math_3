@@ -1,7 +1,5 @@
 package math;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.util.Scanner;
 
 public class Main {
@@ -70,8 +68,8 @@ public class Main {
     }
 
     public static String change(float num, String symbol) {
-        if (num > 0) {
-            symbol = symbol.replace(">", "<");
+        if (num < 0) {
+            symbol = symbol.contains(">") ? symbol.replace(">", "<") : symbol.replace("<", ">");
         } else {
             symbol = symbol.replace("<", ">");
         }
@@ -97,7 +95,7 @@ public class Main {
                 System.out.println("Неравенство не имеет решений");
             }
             if ((symb.equals(">=") && f1 < 0 && f2 < 0) || (symb.equals("<=") && f1 > 0 && f2 > 0)) {
-                System.out.printf("X = %.0f%n", X);
+                System.out.printf("X = %.1f%n", X);
             }
 
             if ((symb.contains(">") && f1 > 0) || (symb.contains("<") && f1 < 0)) {
@@ -121,24 +119,15 @@ public class Main {
         Maxx = Math.max(x1, x2);
 
         if (symb.contains(">")) {
-            System.out.printf("X %s %.0f, X %s %.0f%n", change(a, symb), Minx, symb, Maxx);
+            System.out.printf("X %s %.1f, X %s %.1f%n", change(a, symb), Minx, symb, Maxx);
         } else {
-            System.out.printf("%.0f %s X %s %.0f%n", Minx, symb, symb, Maxx);
+            System.out.printf("%.1f %s X %s %.1f%n", Minx, symb, symb, Maxx);
         }
 
-        //System.out.printf("X1 = %.2f%n", Minx);
-        //System.out.printf("X2 = %.2f%n", Maxx);
     }
 
     public static void DiscAndKor() {
         System.out.println(D);
         System.out.println(kor);
     }
-
-
 }
-/*
-symbol = symbol.contains(">") ? symbol.replace(">", "<") : symbol.replace("<", ">");
-        System.out.printf("%.0f %s X %s %.0f %n", Minx, neravenstvo(a, symb), neravenstvo(a, symb), Maxx);
-        return symbol;
- */
